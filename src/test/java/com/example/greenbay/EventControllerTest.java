@@ -54,18 +54,14 @@ class EventControllerTest {
 
     @Test
     void testGetAllEvents() {
-        // Mocking data
         List<Event> mockEvents = new ArrayList<>();
         mockEvents.add(new Event("organizerId", "Event 1", "Description 1", "12:00", "2024-12-31", "Location"));
         mockEvents.add(new Event("organizerId", "Event 2", "Description 2", "12:00", "2024-12-31", "Location"));
 
-        // Mocking repository behavior
         when(eventRepository.findAll()).thenReturn(mockEvents);
 
-        // Call the controller method
         Iterable<Event> events = eventController.getEvents();
 
-        // Verify the result
         assertNotNull(events);
         assertEquals(2, ((List<Event>) events).size());
     }
