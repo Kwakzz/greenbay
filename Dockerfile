@@ -19,7 +19,7 @@ WORKDIR /app
 # Copy the built JAR file from the build stage
 COPY --from=build /app/target/greenbay-0.0.1-SNAPSHOT.jar .
 
-EXPOSE 8080
+EXPOSE 443
 
 # Specify the command to run the application
 CMD ["java", "-jar", "greenbay-0.0.1-SNAPSHOT.jar"]
